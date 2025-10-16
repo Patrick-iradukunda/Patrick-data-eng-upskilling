@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def calculate_profit(df: pd.DataFrame) -> pd.DataFrame:
-    """Compute profit and ROI metrics."""
+    # Compute profit and ROI .
     if not {"budget_musd", "revenue_musd"}.issubset(df.columns):
         raise KeyError("Missing columns: 'budget_musd' or 'revenue_musd'.")
     df["profit_musd"] = df["revenue_musd"] - df["budget_musd"]
@@ -12,14 +12,14 @@ def calculate_profit(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def rank_movies(df: pd.DataFrame, column: str, ascending: bool = False, top_n: int = 5) -> pd.DataFrame:
-    """Rank top/bottom movies by a given column."""
+    # Rank top/bottom movies by a given column.
     if column not in df.columns:
         raise KeyError(f"Column '{column}' not found in DataFrame.")
     return df[["title", column]].dropna(subset=[column]).sort_values(by=column, ascending=ascending).head(top_n)
 
 
 def movie_performance_kpis(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
-    """Generate core performance KPIs."""
+    # Generate core performance KPIs for movies.
     df = calculate_profit(df)
     roi_df = df.dropna(subset=["roi"])
     rated_df = df[df["vote_count"] >= 10]
@@ -39,7 +39,7 @@ def movie_performance_kpis(df: pd.DataFrame) -> dict[str, pd.DataFrame]:
 
 
 def franchise_vs_standalone(df: pd.DataFrame) -> pd.DataFrame:
-    """Compare franchise vs standalone movie performance."""
+    # Compare franchise vs standalone movie performance.
     if "belongs_to_collection" not in df.columns:
         raise KeyError("'belongs_to_collection' column missing for franchise analysis.")
     df["is_franchise"] = df["belongs_to_collection"].apply(lambda x: pd.notna(x) and x != "")
@@ -50,7 +50,7 @@ def franchise_vs_standalone(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def most_successful_franchises(df: pd.DataFrame) -> pd.DataFrame:
-    """Identify top franchises by financial & rating metrics."""
+    # Identify top franchises by financial & rating metrics.
     if "belongs_to_collection" not in df.columns:
         raise KeyError("'belongs_to_collection' column missing for franchise analysis.")
     return (df.dropna(subset=["belongs_to_collection"])
@@ -62,7 +62,7 @@ def most_successful_franchises(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def most_successful_directors(df: pd.DataFrame) -> pd.DataFrame:
-    """Find directors with most revenue and best average ratings."""
+    # Find directors with most revenue and best average ratings
     if "director" not in df.columns:
         raise KeyError("'director' column missing for director analysis.")
     return (df.dropna(subset=["director"])
@@ -73,7 +73,7 @@ def most_successful_directors(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def advanced_movie_searches(df: pd.DataFrame) -> None:
-    """Perform two advanced movie search queries."""
+    # Perform two advanced movie search queries.
     if "cast" not in df.columns or "director" not in df.columns:
         print("\n⚠️ Skipping advanced movie searches (missing 'cast' and/or 'director' columns).")
         return
@@ -94,7 +94,7 @@ def advanced_movie_searches(df: pd.DataFrame) -> None:
 
 
 def print_kpi_results(kpis: dict[str, pd.DataFrame], df: pd.DataFrame) -> None:
-    """Print KPI results and additional analysis tables."""
+    # Print KPI results and additional analysis tables.
     for name, table in kpis.items():
         print(f"\n📊 {name}")
         print(table.to_string(index=False))

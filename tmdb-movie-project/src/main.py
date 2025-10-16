@@ -6,6 +6,7 @@ from analysis.kpi_analysis import (
     print_kpi_results,
     advanced_movie_searches
 )
+from visualization.visualizations import generate_all_visualizations
 
 
 def main():
@@ -34,10 +35,14 @@ def main():
     print_kpi_results(kpis, df_cleaned)
 
     
-    print("\n Advanced Movie Searches:")
+    print("\n🔍 Advanced Movie Searches:")
     advanced_movie_searches(df_cleaned)
 
-    print("\n Analysis complete! ")
+    # Step 4 – Data Visualization
+    print("\n📊 Generating visualizations...")
+    generate_all_visualizations(df_cleaned)
+
+    print("\n✅ Analysis complete! 🎉")
 
 
 if __name__ == "__main__":
