@@ -60,7 +60,7 @@
             {
                 "english_name": "Japanese",
                 "iso_639_1": "ja",
-                "name": "\u65e5\u672c\u8a9e"
+                "name": "日本語"
             },
             {
                 "english_name": "Xhosa",
@@ -73,7 +73,15 @@
         "title": "Avengers: Endgame",
         "video": false,
         "vote_average": 8.238,
-        "vote_count": 26825
+        "vote_count": 26825,
+        "director": "Anthony Russo | Joe Russo",
+        "cast": [
+            "Robert Downey Jr.",
+            "Chris Evans",
+            "Mark Ruffalo",
+            "Chris Hemsworth",
+            "Scarlett Johansson"
+        ]
     },
     {
         "adult": false,
@@ -162,7 +170,7 @@
             {
                 "english_name": "Spanish",
                 "iso_639_1": "es",
-                "name": "Espa\u00f1ol"
+                "name": "Español"
             }
         ],
         "status": "Released",
@@ -170,7 +178,15 @@
         "title": "Avatar",
         "video": false,
         "vote_average": 7.594,
-        "vote_count": 32696
+        "vote_count": 32696,
+        "director": "James Cameron",
+        "cast": [
+            "Sam Worthington",
+            "Zoe Saldaña",
+            "Sigourney Weaver",
+            "Stephen Lang",
+            "Michelle Rodriguez"
+        ]
     },
     {
         "adult": false,
@@ -242,7 +258,15 @@
         "title": "Star Wars: The Force Awakens",
         "video": false,
         "vote_average": 7.255,
-        "vote_count": 20010
+        "vote_count": 20010,
+        "director": "J.J. Abrams",
+        "cast": [
+            "Harrison Ford",
+            "Mark Hamill",
+            "Carrie Fisher",
+            "Adam Driver",
+            "Daisy Ridley"
+        ]
     },
     {
         "adult": false,
@@ -313,7 +337,15 @@
         "title": "Avengers: Infinity War",
         "video": false,
         "vote_average": 8.236,
-        "vote_count": 31034
+        "vote_count": 31034,
+        "director": "Anthony Russo | Joe Russo",
+        "cast": [
+            "Robert Downey Jr.",
+            "Chris Evans",
+            "Chris Hemsworth",
+            "Josh Brolin",
+            "Mark Ruffalo"
+        ]
     },
     {
         "adult": false,
@@ -338,7 +370,7 @@
         ],
         "original_language": "en",
         "original_title": "Titanic",
-        "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fianc\u00e9. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death\u2014on its first and last voyage\u2014on April 15, 1912.",
+        "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
         "popularity": 21.7272,
         "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
         "production_companies": [
@@ -379,7 +411,7 @@
             {
                 "english_name": "French",
                 "iso_639_1": "fr",
-                "name": "Fran\u00e7ais"
+                "name": "Français"
             },
             {
                 "english_name": "German",
@@ -399,7 +431,7 @@
             {
                 "english_name": "Russian",
                 "iso_639_1": "ru",
-                "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+                "name": "Pусский"
             }
         ],
         "status": "Released",
@@ -407,7 +439,15 @@
         "title": "Titanic",
         "video": false,
         "vote_average": 7.905,
-        "vote_count": 26388
+        "vote_count": 26388,
+        "director": "James Cameron",
+        "cast": [
+            "Leonardo DiCaprio",
+            "Kate Winslet",
+            "Billy Zane",
+            "Kathy Bates",
+            "Frances Fisher"
+        ]
     },
     {
         "adult": false,
@@ -488,8 +528,16 @@
         "tagline": "The park is open.",
         "title": "Jurassic World",
         "video": false,
-        "vote_average": 6.699,
-        "vote_count": 21049
+        "vote_average": 6.7,
+        "vote_count": 21049,
+        "director": "Colin Trevorrow",
+        "cast": [
+            "Chris Pratt",
+            "Bryce Dallas Howard",
+            "Irrfan Khan",
+            "Vincent D'Onofrio",
+            "Ty Simpkins"
+        ]
     },
     {
         "adult": false,
@@ -527,7 +575,7 @@
         ],
         "original_language": "en",
         "original_title": "The Lion King",
-        "overview": "Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother\u2014and former heir to the throne\u2014has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.",
+        "overview": "Simba idolizes his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his.",
         "popularity": 8.9032,
         "poster_path": "/dzBtMocZuJbjLOXvrl4zGYigDzh.jpg",
         "production_companies": [
@@ -565,7 +613,15 @@
         "title": "The Lion King",
         "video": false,
         "vote_average": 7.105,
-        "vote_count": 10513
+        "vote_count": 10513,
+        "director": "Jon Favreau",
+        "cast": [
+            "Chiwetel Ejiofor",
+            "John Oliver",
+            "Donald Glover",
+            "James Earl Jones",
+            "John Kani"
+        ]
     },
     {
         "adult": false,
@@ -628,12 +684,12 @@
             {
                 "english_name": "Hindi",
                 "iso_639_1": "hi",
-                "name": "\u0939\u093f\u0928\u094d\u0926\u0940"
+                "name": "हिन्दी"
             },
             {
                 "english_name": "Russian",
                 "iso_639_1": "ru",
-                "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+                "name": "Pусский"
             }
         ],
         "status": "Released",
@@ -641,7 +697,15 @@
         "title": "The Avengers",
         "video": false,
         "vote_average": 7.825,
-        "vote_count": 33446
+        "vote_count": 33446,
+        "director": "Joss Whedon",
+        "cast": [
+            "Robert Downey Jr.",
+            "Chris Evans",
+            "Mark Ruffalo",
+            "Chris Hemsworth",
+            "Scarlett Johansson"
+        ]
     },
     {
         "adult": false,
@@ -711,7 +775,7 @@
             {
                 "english_name": "Arabic",
                 "iso_639_1": "ar",
-                "name": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+                "name": "العربية"
             },
             {
                 "english_name": "English",
@@ -721,12 +785,12 @@
             {
                 "english_name": "Spanish",
                 "iso_639_1": "es",
-                "name": "Espa\u00f1ol"
+                "name": "Español"
             },
             {
                 "english_name": "Thai",
                 "iso_639_1": "th",
-                "name": "\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22"
+                "name": "ภาษาไทย"
             }
         ],
         "status": "Released",
@@ -734,7 +798,15 @@
         "title": "Furious 7",
         "video": false,
         "vote_average": 7.224,
-        "vote_count": 10982
+        "vote_count": 10982,
+        "director": "James Wan",
+        "cast": [
+            "Vin Diesel",
+            "Paul Walker",
+            "Jason Statham",
+            "Michelle Rodriguez",
+            "Jordana Brewster"
+        ]
     },
     {
         "adult": false,
@@ -768,7 +840,7 @@
         ],
         "original_language": "en",
         "original_title": "Avengers: Age of Ultron",
-        "overview": "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and Earth\u2019s Mightiest Heroes are put to the ultimate test as the fate of the planet hangs in the balance. As the villainous Ultron emerges, it is up to The Avengers to stop him from enacting his terrible plans, and soon uneasy alliances and unexpected action pave the way for an epic and unique global adventure.",
+        "overview": "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and Earth’s Mightiest Heroes are put to the ultimate test as the fate of the planet hangs in the balance. As the villainous Ultron emerges, it is up to The Avengers to stop him from enacting his terrible plans, and soon uneasy alliances and unexpected action pave the way for an epic and unique global adventure.",
         "popularity": 13.4921,
         "poster_path": "/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
         "production_companies": [
@@ -800,7 +872,15 @@
         "title": "Avengers: Age of Ultron",
         "video": false,
         "vote_average": 7.271,
-        "vote_count": 23778
+        "vote_count": 23778,
+        "director": "Joss Whedon",
+        "cast": [
+            "Robert Downey Jr.",
+            "Chris Hemsworth",
+            "Mark Ruffalo",
+            "Chris Evans",
+            "Scarlett Johansson"
+        ]
     },
     {
         "adult": false,
@@ -863,7 +943,7 @@
             {
                 "english_name": "Korean",
                 "iso_639_1": "ko",
-                "name": "\ud55c\uad6d\uc5b4/\uc870\uc120\ub9d0"
+                "name": "한국어/조선말"
             },
             {
                 "english_name": "Swahili",
@@ -881,7 +961,15 @@
         "title": "Black Panther",
         "video": false,
         "vote_average": 7.4,
-        "vote_count": 22871
+        "vote_count": 22871,
+        "director": "Ryan Coogler",
+        "cast": [
+            "Chadwick Boseman",
+            "Michael B. Jordan",
+            "Lupita Nyong'o",
+            "Danai Gurira",
+            "Martin Freeman"
+        ]
     },
     {
         "adult": false,
@@ -953,7 +1041,15 @@
         "title": "Harry Potter and the Deathly Hallows: Part 2",
         "video": false,
         "vote_average": 8.084,
-        "vote_count": 21350
+        "vote_count": 21350,
+        "director": "David Yates",
+        "cast": [
+            "Daniel Radcliffe",
+            "Emma Watson",
+            "Rupert Grint",
+            "Ralph Fiennes",
+            "Alan Rickman"
+        ]
     },
     {
         "adult": false,
@@ -1019,7 +1115,15 @@
         "title": "Star Wars: The Last Jedi",
         "video": false,
         "vote_average": 6.767,
-        "vote_count": 15844
+        "vote_count": 15844,
+        "director": "Rian Johnson",
+        "cast": [
+            "Mark Hamill",
+            "Carrie Fisher",
+            "Adam Driver",
+            "Daisy Ridley",
+            "John Boyega"
+        ]
     },
     {
         "adult": false,
@@ -1093,7 +1197,15 @@
         "title": "Frozen II",
         "video": false,
         "vote_average": 7.244,
-        "vote_count": 10040
+        "vote_count": 10040,
+        "director": "Jennifer Lee | Chris Buck",
+        "cast": [
+            "Idina Menzel",
+            "Kristen Bell",
+            "Josh Gad",
+            "Jonathan Groff",
+            "Evan Rachel Wood"
+        ]
     },
     {
         "adult": false,
@@ -1166,7 +1278,7 @@
             {
                 "english_name": "Russian",
                 "iso_639_1": "ru",
-                "name": "P\u0443\u0441\u0441\u043a\u0438\u0439"
+                "name": "Pусский"
             }
         ],
         "status": "Released",
@@ -1174,7 +1286,15 @@
         "title": "Jurassic World: Fallen Kingdom",
         "video": false,
         "vote_average": 6.539,
-        "vote_count": 12345
+        "vote_count": 12345,
+        "director": "J.A. Bayona",
+        "cast": [
+            "Chris Pratt",
+            "Bryce Dallas Howard",
+            "Rafe Spall",
+            "Justice Smith",
+            "Daniella Pineda"
+        ]
     },
     {
         "adult": false,
@@ -1212,7 +1332,7 @@
         ],
         "original_language": "en",
         "original_title": "Frozen",
-        "overview": "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa\u2019s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
+        "overview": "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
         "popularity": 16.6361,
         "poster_path": "/itAKcobTYGpYT8Phwjd8c9hleTo.jpg",
         "production_companies": [
@@ -1244,7 +1364,15 @@
         "title": "Frozen",
         "video": false,
         "vote_average": 7.249,
-        "vote_count": 17113
+        "vote_count": 17113,
+        "director": "Jennifer Lee | Chris Buck",
+        "cast": [
+            "Idina Menzel",
+            "Kristen Bell",
+            "Jonathan Groff",
+            "Josh Gad",
+            "Livvy Stubenrauch"
+        ]
     },
     {
         "adult": false,
@@ -1308,15 +1436,23 @@
             {
                 "english_name": "French",
                 "iso_639_1": "fr",
-                "name": "Fran\u00e7ais"
+                "name": "Français"
             }
         ],
         "status": "Released",
         "tagline": "Be our guest.",
         "title": "Beauty and the Beast",
         "video": false,
-        "vote_average": 6.969,
-        "vote_count": 15793
+        "vote_average": 7.0,
+        "vote_count": 15793,
+        "director": "Bill Condon",
+        "cast": [
+            "Emma Watson",
+            "Dan Stevens",
+            "Luke Evans",
+            "Josh Gad",
+            "Kevin Kline"
+        ]
     },
     {
         "adult": false,
@@ -1354,7 +1490,7 @@
         ],
         "original_language": "en",
         "original_title": "Incredibles 2",
-        "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet \u2013 taking care of the problems of his three children.",
+        "overview": "Elastigirl springs into action to save the day, while Mr. Incredible faces his greatest challenge yet – taking care of the problems of his three children.",
         "popularity": 16.1043,
         "poster_path": "/9lFKBtaVIhP7E2Pk0IY1CwTKTMZ.jpg",
         "production_companies": [
@@ -1386,6 +1522,14 @@
         "title": "Incredibles 2",
         "video": false,
         "vote_average": 7.456,
-        "vote_count": 13297
+        "vote_count": 13297,
+        "director": "Brad Bird",
+        "cast": [
+            "Craig T. Nelson",
+            "Holly Hunter",
+            "Sarah Vowell",
+            "Huck Milner",
+            "Catherine Keener"
+        ]
     }
 ]

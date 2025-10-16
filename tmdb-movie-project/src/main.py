@@ -1,10 +1,15 @@
 from utils.config_loader import load_config
 from api.fetch_data import fetch_movie_data
 from utils.data_cleaner import load_raw_data, clean_movie_data
-from analysis.kpi_analysis import movie_performance_kpis, print_kpi_results
+from analysis.kpi_analysis import (
+    movie_performance_kpis,
+    print_kpi_results,
+    advanced_movie_searches
+)
 
 
 def main():
+    """Main entry point for TMDB movie analysis pipeline."""
     # Step 1 – Load API key & fetch movies
     api_key = load_config()
     movie_ids = [
@@ -17,18 +22,22 @@ def main():
     movies = fetch_movie_data(api_key, movie_ids)
     print(f"✅ Fetched {len(movies)} movies.")
 
-    # Step 2 – Load & clean data
+    # Step 2 – Load & clean raw data
     print("\n🧹 Cleaning movie data...")
     df_raw = load_raw_data()
     df_cleaned = clean_movie_data(df_raw)
-    print(f"✅ Cleaning complete. Final dataset shape: {df_cleaned.shape}")
+    print(f" Cleaning complete. Final dataset shape: {df_cleaned.shape}")
 
     # Step 3 – KPI Analysis
-    print("\n📊 Performing KPI Analysis...")
+    print("\n Performing KPI Analysis...")
     kpis = movie_performance_kpis(df_cleaned)
-    print_kpi_results(kpis)
+    print_kpi_results(kpis, df_cleaned)
 
-    print("\n🎉 KPI analysis complete.")
+    
+    print("\n Advanced Movie Searches:")
+    advanced_movie_searches(df_cleaned)
+
+    print("\n Analysis complete! ")
 
 
 if __name__ == "__main__":
