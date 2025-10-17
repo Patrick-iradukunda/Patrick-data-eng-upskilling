@@ -96,19 +96,19 @@ def advanced_movie_searches(df: pd.DataFrame) -> None:
 def print_kpi_results(kpis: dict[str, pd.DataFrame], df: pd.DataFrame) -> None:
     # Print KPI results and additional analysis tables.
     for name, table in kpis.items():
-        print(f"\n📊 {name}")
+        print(f"\n {name}")
         print(table.to_string(index=False))
 
     if "belongs_to_collection" in df.columns:
-        print("\n🎬 Franchise vs Standalone Performance:")
+        print("\n Franchise vs Standalone Performance:")
         print(franchise_vs_standalone(df))
-        print("\n🏅 Most Successful Franchises:")
+        print("\n Most Successful Franchises:")
         print(most_successful_franchises(df))
     else:
-        print("\n⚠️ Skipping franchise-related analysis (missing column).")
+        print("\n Skipping franchise-related analysis (missing column).")
 
     if "director" in df.columns:
-        print("\n🎥 Most Successful Directors:")
+        print("\n Most Successful Directors:")
         print(most_successful_directors(df))
     else:
-        print("\n⚠️ Skipping director analysis (missing column).")
+        print("\n Skipping director analysis (missing column).")

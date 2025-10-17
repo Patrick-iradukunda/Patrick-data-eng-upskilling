@@ -24,7 +24,7 @@ def main():
     print(f"✅ Fetched {len(movies)} movies.")
 
     # Step 2 – Load & clean raw data
-    print("\n🧹 Cleaning movie data...")
+    print("\n Cleaning movie data...")
     df_raw = load_raw_data()
     df_cleaned = clean_movie_data(df_raw)
     print(f" Cleaning complete. Final dataset shape: {df_cleaned.shape}")
@@ -42,7 +42,7 @@ def main():
     print("\n📊 Generating visualizations...")
     generate_all_visualizations(df_cleaned)
 
-    print("\n✅ Analysis complete! 🎉")
+    print("\n✅ Analysis complete! ")
 
 
 if __name__ == "__main__":

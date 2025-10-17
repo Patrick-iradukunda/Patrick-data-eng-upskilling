@@ -22,7 +22,7 @@ def _save_plot(fig: plt.Figure, filename: str, output_dir: Optional[Path] = None
     output_dir.mkdir(exist_ok=True, parents=True)
     output_path = output_dir / filename
     fig.savefig(output_path, dpi=300, bbox_inches='tight')
-    print(f"📊 Saved visualization: {output_path}")
+    print(f" Saved visualization: {output_path}")
 
 
 def plot_revenue_vs_budget(df: pd.DataFrame) -> None:
@@ -30,7 +30,7 @@ def plot_revenue_vs_budget(df: pd.DataFrame) -> None:
     plot_df = df.dropna(subset=['budget_musd', 'revenue_musd'])
     
     if plot_df.empty:
-        print("⚠️ No data available for Revenue vs Budget plot.")
+        print(" No data available for Revenue vs Budget plot.")
         return
     
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -64,7 +64,7 @@ def plot_roi_by_genre(df: pd.DataFrame) -> None:
     plot_df = df.dropna(subset=['roi', 'genres']).copy()
     
     if plot_df.empty:
-        print("⚠️ No data available for ROI by Genre plot.")
+        print(" No data available for ROI by Genre plot.")
         return
     
     plot_df['genre_list'] = plot_df['genres'].str.split(' | ')
@@ -73,7 +73,7 @@ def plot_roi_by_genre(df: pd.DataFrame) -> None:
     genre_df = exploded_df[exploded_df['genre_list'].isin(top_genres)]
     
     if genre_df.empty:
-        print("⚠️ Insufficient genre data for visualization.")
+        print(" Insufficient genre data for visualization.")
         return
     
     genre_data = [genre_df[genre_df['genre_list'] == genre]['roi'].values 
@@ -101,7 +101,7 @@ def plot_popularity_vs_rating(df: pd.DataFrame) -> None:
     plot_df = df.dropna(subset=['popularity', 'vote_average'])
     
     if plot_df.empty:
-        print("⚠️ No data available for Popularity vs Rating plot.")
+        print(" No data available for Popularity vs Rating plot.")
         return
     
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -128,7 +128,7 @@ def plot_yearly_box_office_trends(df: pd.DataFrame) -> None:
     plot_df = df_copy.dropna(subset=['year', 'revenue_musd', 'budget_musd'])
     
     if plot_df.empty:
-        print("⚠️ No data available for Yearly Trends plot.")
+        print(" No data available for Yearly Trends plot.")
         return
     
     yearly_stats = plot_df.groupby('year').agg({
@@ -140,7 +140,7 @@ def plot_yearly_box_office_trends(df: pd.DataFrame) -> None:
     yearly_stats = yearly_stats[yearly_stats['movie_count'] >= 2]
     
     if yearly_stats.empty:
-        print("⚠️ Insufficient data for yearly trends.")
+        print(" Insufficient data for yearly trends.")
         return
     
     fig, ax1 = plt.subplots(figsize=(12, 6))
@@ -170,7 +170,7 @@ def plot_franchise_vs_standalone(df: pd.DataFrame) -> None:
     _setup_plot_style()
     
     if 'belongs_to_collection' not in df.columns:
-        print("⚠️ 'belongs_to_collection' column missing. Skipping franchise analysis.")
+        print(" 'belongs_to_collection' column missing. Skipping franchise analysis.")
         return
     
     df_copy = df.copy()
@@ -186,7 +186,7 @@ def plot_franchise_vs_standalone(df: pd.DataFrame) -> None:
     }).round(2)
     
     if comparison.empty or len(comparison) < 2:
-        print("⚠️ Insufficient data for franchise comparison.")
+        print(" Insufficient data for franchise comparison.")
         return
     
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
@@ -222,7 +222,7 @@ def plot_franchise_vs_standalone(df: pd.DataFrame) -> None:
 
 
 def generate_all_visualizations(df: pd.DataFrame) -> None:
-    print("\n📊 Generating Data Visualizations...")
+    print("\n Generating Data Visualizations...")
     print("=" * 60)
     
     output_dir = Path(__file__).resolve().parents[2] / "data" / "visualizations"

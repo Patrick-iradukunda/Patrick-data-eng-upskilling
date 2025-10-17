@@ -13,9 +13,9 @@ def fetch_movie_credits(api_key: str, movie_id: int) -> dict:
             directors = [m["name"] for m in credits.get("crew", []) if m.get("job") == "Director"]
             cast = [a["name"] for a in credits.get("cast", [])[:5]]
             return {"director": " | ".join(directors) or None, "cast": cast}
-        print(f"⚠️  Failed to fetch credits for movie {movie_id}: HTTP {response.status_code}")
+        print(f"  Failed to fetch credits for movie {movie_id}: HTTP {response.status_code}")
     except requests.RequestException as e:
-        print(f"⚠️  Error fetching credits for movie {movie_id}: {e}")
+        print(f"  Error fetching credits for movie {movie_id}: {e}")
     return {"director": None, "cast": []}
 
 
@@ -33,9 +33,9 @@ def fetch_movie_data(api_key: str, movie_ids: list[int]) -> list[dict]:
                 movie.update(credits)
                 movies_data.append(movie)
             else:
-                print(f"⚠️  Skipping movie ID {movie_id}: HTTP {response.status_code}")
+                print(f"  Skipping movie ID {movie_id}: HTTP {response.status_code}")
         except requests.RequestException as e:
-            print(f"⚠️  Error fetching movie {movie_id}: {e}")
+            print(f"  Error fetching movie {movie_id}: {e}")
 
     data_path = Path(__file__).resolve().parents[2] / "data"
     data_path.mkdir(exist_ok=True, parents=True)
