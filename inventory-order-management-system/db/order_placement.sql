@@ -1,9 +1,11 @@
+
+
 USE inventory_system;
 
 DELIMITER $$
 CREATE PROCEDURE place_order(
-    IN p_customer_id INT,
-    IN p_items JSON
+        IN p_customer_id INT,
+        IN p_items JSON
 )
 BEGIN
     DECLARE i INT DEFAULT 0;

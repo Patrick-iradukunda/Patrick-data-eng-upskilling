@@ -1,3 +1,5 @@
+
+
 USE inventory_system;
 
 INSERT INTO customers (name, email, phone) VALUES
