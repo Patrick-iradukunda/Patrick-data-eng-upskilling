@@ -1,67 +1,283 @@
 # Inventory and Order Management System
 
-This repository contains a simplified, beginner-friendly SQL inventory and order management schema intended for learning and small demos. All SQL files live in the `db/` folder. The `ERD/` helper files have been removed; only the final assets were kept previously and the folder is now deleted per project cleanup.
+A MySQL-based inventory and order management system with automated stock replenishment, transactional order processing, and comprehensive reporting capabilities.
 
-What is included (db/):
+## Database Overview
 
-- `schema.sql` — creates the `inventory_system` database and core tables:
-  - `customers` (customer_id PK)
-  - `products` (product_id PK) with `price`, `stock_quantity`, `reorder_level`
-  - `orders` (order_id PK, customer_id FK)
-  - `order_details` (order_detail_id PK, order_id FK, product_id FK)
-  - `inventory_logs` (log_id PK, product_id FK)
-- `sample_data.sql` — small set of sample customers and products
-- `order_placement.sql` — JSON-based `place_order(customer_id, items_json)` procedure that:
-  - accepts multiple items in a single call (JSON array of {product_id, quantity})
-  - validates customer and product existence
-  - checks stock and performs the whole order in a single transaction
-  - deducts product stock, inserts `order_details`, logs inventory changes
-  - computes and applies a bulk discount (10% for >=10 items, 20% for >=20 items)
-- `replenishment.sql` — restocking helper that:
-  - finds low-stock products (stock_quantity <= reorder_level)
-  - applies a configurable restock amount to only the affected rows
-  - inserts `inventory_logs` for the exact rows updated
-- `views.sql` — convenience views: `order_summary` (order-level summary) and `stock_status` (low-stock flag)
-- `reports.sql` — sample reporting queries: order lists, low-stock products, customer tiers, per-order bulk discount rate
+- **Database name**: `inventory_system`
+- **Core tables**: `customers`, `products`, `orders`, `order_details`, `inventory_logs`
+- **Views**: `order_summary`, `stock_status`
+- **Stored procedures**: `place_order`, `place_order_from_temp`, `auto_replenish_stock`
+- **Event**: `daily_stock_replenishment`
 
-Implementation vs. lab requirements (quick mapping):
+## Quick Start
 
-- Schema (Phase 1): Implemented — core tables and foreign keys are present in `schema.sql`.
-- Order placement (Phase 2): Implemented with `order_placement.sql` — supports multi-product orders, validations, stock updates and inventory logging. Bulk discounts are applied at order time.
-- Inventory tracking (Phase 2): Implemented — `inventory_logs` records order and replenishment changes.
-- Monitoring & Reporting (Phase 3): Implemented — `views.sql` and `reports.sql` provide order summaries, low-stock reports, and customer-tier calculations.
-- Replenishment (Phase 4): Implemented — `replenishment.sql` identifies low-stock products, updates stock, and logs replenishments for those specific products. (Manual run; no scheduler/event configured.)
+Execute the following SQL files in MySQL Workbench in this exact order:
 
-Notes and small caveats
+1. `schema.sql` - Creates database and tables
+2. `sample_data.sql` - Loads sample data (4 customers, 6 products, 5 orders)
+3. `order_placement.sql` - Creates order processing procedures
+4. `views.sql` - Creates summary views
+5. `replenishment.sql` - Sets up automated stock replenishment
+6. `reports.sql` - Run individual queries for analysis
 
-- The `place_order` procedure expects a JSON array payload; example:
+## File Descriptions
 
-```sql
-CALL place_order(1, '[{"product_id":1,"quantity":2},{"product_id":2,"quantity":3}]');
-```
+### schema.sql
 
-- The replenishment script uses a temporary table to ensure logs match the rows that were updated.
-- No scheduled automation (cron/event) was added; replenishment is a manual script you can run on demand.
-- Indexing beyond primary keys is left minimal; add indexes if you see performance concerns on large datasets.
+Creates the database schema with all tables, foreign keys, and indexes.
 
-Quick steps to run in MySQL Workbench
+**Features:**
 
-1. Open MySQL Workbench and connect to your server.
-2. Run `db/schema.sql` to create the `inventory_system` database and tables.
-3. Run `db/sample_data.sql` to insert example customers and products.
-4. Run `db/order_placement.sql` to create the JSON-capable `place_order` procedure.
-5. Run `db/views.sql` to create the convenience views.
-6. Optionally run queries in `db/reports.sql` and `db/replenishment.sql` to explore reporting and stock management.
+- Automatic cleanup with `DROP TABLE IF EXISTS` statements
+- InnoDB engine with strict SQL mode
+- CHECK constraints for data validation
+- Indexed columns for optimized queries (`category`, `product_id`, `order_date`)
 
-If MySQL Workbench blocks an UPDATE (safe update mode), run:
+**Tables:**
+
+- `customers` - Customer information
+- `products` - Product catalog with stock levels
+- `orders` - Order headers
+- `order_details` - Order line items
+- `inventory_logs` - Audit trail for inventory changes
+
+**Usage:**
 
 ```sql
-SET SQL_SAFE_UPDATES = 0;
+-- In MySQL Workbench, press Ctrl+Shift+Enter
 ```
 
-If you'd like, I can also:
+### sample_data.sql
 
-- add a tiny `verify_counts.sql` file that prints row counts for all core tables after setup
-- implement an automated event to call `replenishment.sql` on a schedule (MySQL EVENT)
+Populates the database with realistic sample data for testing.
 
----
+**Features:**
+
+- Safe update mode handling for batch operations
+- Automatic cleanup of existing data
+- Auto-increment counter reset
+- 4 customers, 6 products, 5 orders with 14 line items
+- 22 inventory log entries tracking all stock movements
+
+**Data includes:**
+
+- Initial stock receipts
+- Order transactions with stock deductions
+- Replenishment activities
+- Final stock quantities reflecting all transactions
+
+**Usage:**
+
+```sql
+-- Loads complete dataset with referential integrity
+```
+
+### order_placement.sql
+
+Implements transactional order processing with comprehensive validation.
+
+**Procedures:**
+
+#### place_order(p_customer_id, p_items)
+
+Places an order with automatic stock validation and inventory tracking.
+
+**Parameters:**
+
+- `p_customer_id` - Customer ID (validated against customers table)
+- `p_items` - JSON array: `[{"product_id": 1, "quantity": 2}]`
+
+**Features:**
+
+- Customer validation
+- JSON input validation
+- Stock availability checking with row-level locking
+- Automatic stock deduction
+- Inventory logging
+- Bulk discounts (10% for 10-19 items, 20% for 20+ items)
+- Transaction rollback on errors
+
+**Example:**
+
+```sql
+CALL place_order(1, '[{"product_id": 1, "quantity": 2}, {"product_id": 3, "quantity": 1}]');
+```
+
+#### place_order_from_temp(p_customer_id)
+
+Places an order using data from a `temp_order_lines` table (requires separate table creation).
+
+### views.sql
+
+Creates database views for simplified querying.
+
+**Views:**
+
+#### order_summary
+
+Aggregated order information with customer details and item counts.
+
+**Columns:** `order_id`, `customer_id`, `customer_name`, `order_date`, `total_amount`, `items_count`
+
+#### stock_status
+
+Current stock levels with reorder indicators.
+
+**Columns:** `product_id`, `product_name`, `category`, `stock_quantity`, `reorder_level`, `needs_reorder`
+
+**Usage:**
+
+```sql
+SELECT * FROM order_summary WHERE order_date >= '2025-11-01';
+SELECT * FROM stock_status WHERE needs_reorder = 1;
+```
+
+### replenishment.sql
+
+Automated and manual stock replenishment system.
+
+**Features:**
+
+**Manual Replenishment:**
+
+- Identifies low stock products
+- Adds 50 units to products at or below reorder level
+- Logs replenishment to `inventory_logs`
+- Safe update mode handling
+
+**Automated Replenishment:**
+
+- `auto_replenish_stock()` procedure
+- `daily_stock_replenishment` event (runs daily at 2:00 AM)
+- Enables global event scheduler
+
+**Usage:**
+
+```sql
+-- Manual execution
+SET @restock_amount = 50;
+-- Run the replenishment script
+
+-- Check event status
+SHOW EVENTS FROM inventory_system;
+
+-- Call procedure manually
+CALL auto_replenish_stock();
+```
+
+### reports.sql
+
+Collection of analytical queries for business intelligence.
+
+**Available Reports:**
+
+1. All orders with customer details and item counts
+2. Low stock products requiring replenishment
+3. Customer spending tiers (Bronze/Silver/Gold based on total spend)
+4. Bulk discount eligibility by order
+5. Table row counts across all tables
+6. List of all views in the database
+7. List of all stored procedures
+8. Active events and schedules
+9. Inventory change type summary
+10. Foreign key relationships
+11. Database indexes
+12. Customer spending rankings (with RANK window function)
+13. Running total of orders by customer (with window functions)
+
+**Usage:**
+
+```sql
+-- Execute individual queries as needed
+-- Each query is independent and can run separately
+```
+
+## Key Features
+
+### Data Integrity
+
+- Foreign key constraints with cascading deletes
+- CHECK constraints for non-negative values
+- UNIQUE constraint on customer emails
+- Transactional order processing with rollback capability
+
+### Performance Optimization
+
+- Indexed columns for frequent queries
+- Row-level locking for concurrent order processing
+- InnoDB storage engine for ACID compliance
+
+### Safe Operations
+
+- `DROP IF EXISTS` statements prevent execution errors
+- Safe update mode management for batch operations
+- Automatic cleanup before data insertion
+
+### Automation
+
+- Scheduled daily stock replenishment
+- Automatic inventory logging on all stock changes
+- Event scheduler for background tasks
+
+## Technical Specifications
+
+- **MySQL Version**: 8.0+ (requires JSON functions)
+- **Character Set**: UTF-8 (utf8mb4)
+- **Collation**: utf8mb4_unicode_ci
+- **Storage Engine**: InnoDB
+- **SQL Mode**: STRICT_ALL_TABLES, NO_ENGINE_SUBSTITUTION
+
+## Sample Data Statistics
+
+After running `sample_data.sql`:
+
+- **Customers**: 4
+- **Products**: 6
+- **Orders**: 5
+- **Order Details**: 14 line items
+- **Inventory Logs**: 22 entries
+
+## Troubleshooting
+
+**Safe Update Mode Errors:**
+The scripts automatically handle safe update mode by temporarily disabling it for batch operations.
+
+**Duplicate Entry Errors:**
+All scripts include cleanup statements (`DELETE`, `DROP IF EXISTS`) to handle re-execution.
+
+**Procedure Syntax Errors:**
+Ensure DELIMITER statements are processed correctly in MySQL Workbench. Use `Ctrl+Shift+Enter` to execute entire files.
+
+**Event Scheduler:**
+Verify event scheduler is enabled:
+
+```sql
+SHOW VARIABLES LIKE 'event_scheduler';
+SET GLOBAL event_scheduler = ON;
+```
+
+## License
+
+This is a sample educational project for learning MySQL database design and stored procedures.
+
+- Purpose: simplified read-only views for common queries.
+- Implements:
+  - `order_summary` view: aggregates order header, customer name, order date, total amount and items count.
+  - `stock_status` view: product-level stock with `needs_reorder` flag (1 when `stock_quantity <= reorder_level`).
+- Usage: `mysql -D inventory_system < db/views.sql`
+
+- `reports.sql`
+  - Purpose: reporting and verification queries used for monitoring and tests.
+  - Implements useful queries: recent orders, low-stock listing, customer tiers (Bronze/Silver/Gold by spend), bulk-discount analysis, table/view/procedure/event verification, inventory logs summary, foreign key and index listing.
+  - Usage: run queries from within a MySQL client connected to `inventory_system`, e.g. `mysql -D inventory_system < db/reports.sql` or paste the queries directly to inspect results.
+  - The file has been refactored to a concise, comment-free form (under 80 lines) and includes two CTE/window examples: `customer_spend` (rank by spend) and `orders_with_running_total` (running totals).
+
+## Recommended order to set up and test locally
+
+1. Create schema and tables: `mysql < db/schema.sql`
+2. Load sample data: `mysql -D inventory_system < db/sample_data.sql`
+3. Install procedures: `mysql -D inventory_system < db/order_placement.sql`
+4. Create views: `mysql -D inventory_system < db/views.sql`
+5. Enable automation: `mysql -D inventory_system < db/replenishment.sql`
+6. Run the reports/verification queries: `mysql -D inventory_system < db/reports.sql`

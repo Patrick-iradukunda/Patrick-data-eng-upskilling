@@ -1,11 +1,17 @@
+
+
 USE inventory_system;
 
+DROP PROCEDURE IF EXISTS place_order;
+DROP PROCEDURE IF EXISTS place_order_from_temp;
+
 DELIMITER $$
+
 CREATE PROCEDURE place_order(
-    IN p_customer_id INT,
-    IN p_items JSON
+        IN p_customer_id INT,
+        IN p_items JSON
 )
-BEGIN
+sp_label: BEGIN
     DECLARE i INT DEFAULT 0;
     DECLARE len INT DEFAULT 0;
     DECLARE v_order_id INT;
@@ -22,18 +28,18 @@ BEGIN
     SELECT COUNT(*) INTO v_customer_count FROM customers WHERE customer_id = p_customer_id;
     IF v_customer_count = 0 THEN
         SELECT 'Invalid customer_id' AS error;
-        RETURN;
+        LEAVE sp_label;
     END IF;
 
     IF p_items IS NULL OR NOT JSON_VALID(p_items) THEN
         SELECT 'Invalid or missing items JSON' AS error;
-        RETURN;
+        LEAVE sp_label;
     END IF;
 
     SET len = JSON_LENGTH(p_items);
     IF len IS NULL OR len = 0 THEN
         SELECT 'No items provided' AS error;
-        RETURN;
+        LEAVE sp_label;
     END IF;
 
     START TRANSACTION;
@@ -53,13 +59,13 @@ BEGIN
         IF v_price IS NULL THEN
             ROLLBACK;
             SELECT CONCAT('Product not found: ', v_product_id) AS error;
-            RETURN;
+            LEAVE sp_label;
         END IF;
 
         IF v_stock < v_quantity THEN
             ROLLBACK;
             SELECT CONCAT('Insufficient stock for product ', v_product_id) AS error;
-            RETURN;
+            LEAVE sp_label;
         END IF;
 
         SET v_line_total = v_price * v_quantity;
@@ -98,7 +104,11 @@ BEGIN
            v_order_id AS order_id,
            v_total AS total_amount,
            v_discount_rate AS discount_rate;
-END$$
+END sp_label$$
+
+DELIMITER ;
+
+DELIMITER $$
 
 CREATE PROCEDURE place_order_from_temp(IN p_customer_id INT)
 BEGIN
@@ -110,10 +120,9 @@ BEGIN
 
     IF v_json = '[]' THEN
         SELECT 'No items in temp_order_lines' AS error;
-        RETURN;
+    ELSE
+        CALL place_order(p_customer_id, v_json);
     END IF;
-
-    CALL place_order(p_customer_id, v_json);
 END$$
 
 DELIMITER ;

@@ -1,8 +1,16 @@
+
+
 CREATE DATABASE IF NOT EXISTS inventory_system DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE inventory_system;
 
 SET GLOBAL default_storage_engine = 'InnoDB';
 SET SESSION sql_mode = 'STRICT_ALL_TABLES,NO_ENGINE_SUBSTITUTION';
+
+DROP TABLE IF EXISTS inventory_logs;
+DROP TABLE IF EXISTS order_details;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
