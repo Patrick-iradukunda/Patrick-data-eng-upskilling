@@ -1,0 +1,11 @@
+user_id,product_id,action,timestamp,price,category
+841,403,view,2026-01-28 21:08:12,313.97,Electronics
+902,128,view,2026-01-28 21:08:12,387.78,Toys
+728,324,view,2026-01-28 21:08:12,301.0,Sports
+885,303,purchase,2026-01-28 21:08:12,240.87,Sports
+468,44,purchase,2026-01-28 21:08:12,111.58,Home
+309,470,purchase,2026-01-28 21:08:12,474.58,Home
+578,160,view,2026-01-28 21:08:12,72.6,Toys
+229,198,purchase,2026-01-28 21:08:12,172.77,Sports
+510,119,purchase,2026-01-28 21:08:12,91.1,Sports
+544,125,purchase,2026-01-28 21:08:12,459.14,Home
