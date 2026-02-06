@@ -1,0 +1,29 @@
+2026-02-06 10:48:23,712 INFO - Task context logging is enabled
+2026-02-06 10:48:23,713 INFO - Loaded executor: SequentialExecutor
+2026-02-06 10:48:23,742 INFO - Starting the scheduler
+2026-02-06 10:48:23,742 INFO - Processing each file at most -1 times
+2026-02-06 10:48:23,747 INFO - Launched DagFileProcessorManager with pid: 24513
+2026-02-06 10:48:23,748 INFO - Adopting or resetting orphaned tasks for active dag runs
+2026-02-06 10:48:23,750 INFO - Configured default timezone UTC
+2026-02-06 10:51:35,357 INFO - 1 tasks up for execution:
+	<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-06T08:51:34.231019+00:00 [scheduled]>
+2026-02-06 10:51:35,357 INFO - DAG flight_price_analysis has 0/16 running and queued tasks
+2026-02-06 10:51:35,357 INFO - Setting the following tasks to queued state:
+	<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-06T08:51:34.231019+00:00 [scheduled]>
+2026-02-06 10:51:35,358 WARNING - cannot record scheduled_duration for task run_pipeline because previous state change time has not been saved
+2026-02-06 10:51:35,359 INFO - Sending TaskInstanceKey(dag_id='flight_price_analysis', task_id='run_pipeline', run_id='manual__2026-02-06T08:51:34.231019+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2026-02-06 10:51:35,359 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'flight_price_analysis', 'run_pipeline', 'manual__2026-02-06T08:51:34.231019+00:00', '--local', '--subdir', 'DAGS_FOLDER/flight_price_analysis_dag.py']
+2026-02-06 10:51:35,365 INFO - Executing command: ['airflow', 'tasks', 'run', 'flight_price_analysis', 'run_pipeline', 'manual__2026-02-06T08:51:34.231019+00:00', '--local', '--subdir', 'DAGS_FOLDER/flight_price_analysis_dag.py']
+2026-02-06 10:51:37,829 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='flight_price_analysis', task_id='run_pipeline', run_id='manual__2026-02-06T08:51:34.231019+00:00', try_number=1, map_index=-1)
+2026-02-06 10:51:37,834 INFO - TaskInstance Finished: dag_id=flight_price_analysis, task_id=run_pipeline, run_id=manual__2026-02-06T08:51:34.231019+00:00, map_index=-1, run_start_date=2026-02-06 08:51:36.812843+00:00, run_end_date=2026-02-06 08:51:37.430051+00:00, run_duration=0.617208, state=failed, executor_state=success, try_number=1, max_tries=0, job_id=44, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2026-02-06 08:51:35.357927+00:00, queued_by_job_id=43, pid=25172
+2026-02-06 10:51:37,980 ERROR - Marking run <DagRun flight_price_analysis @ 2026-02-06 08:51:34.231019+00:00: manual__2026-02-06T08:51:34.231019+00:00, state:running, queued_at: 2026-02-06 08:51:34.239552+00:00. externally triggered: True> failed
+2026-02-06 10:51:37,980 INFO - DagRun Finished: dag_id=flight_price_analysis, execution_date=2026-02-06 08:51:34.231019+00:00, run_id=manual__2026-02-06T08:51:34.231019+00:00, run_start_date=2026-02-06 08:51:35.301661+00:00, run_end_date=2026-02-06 08:51:37.980706+00:00, run_duration=2.679045, state=failed, external_trigger=True, run_type=manual, data_interval_start=2026-02-05 00:00:00+00:00, data_interval_end=2026-02-06 00:00:00+00:00, dag_hash=8987358b8cbc5b1bbd6e3e990978dcdf
+2026-02-06 10:53:23,879 INFO - Adopting or resetting orphaned tasks for active dag runs
+2026-02-06 10:53:24,280 INFO - Exiting gracefully upon receiving signal 15
+2026-02-06 10:53:24,433 INFO - Sending Signals.SIGTERM to group 24513. PIDs of all processes in the group: []
+2026-02-06 10:53:24,433 INFO - Sending the signal Signals.SIGTERM to group 24513
+2026-02-06 10:53:24,434 INFO - Sending the signal Signals.SIGTERM to process 24513 as process group is missing.
+2026-02-06 10:53:24,436 INFO - Sending Signals.SIGTERM to group 24513. PIDs of all processes in the group: []
+2026-02-06 10:53:24,436 INFO - Sending the signal Signals.SIGTERM to group 24513
+2026-02-06 10:53:24,436 INFO - Sending the signal Signals.SIGTERM to process 24513 as process group is missing.
+2026-02-06 10:53:24,436 INFO - Exited execute loop

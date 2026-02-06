@@ -1,0 +1,38 @@
+[2026-02-09T12:58:03.550+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-09T10:57:59.081077+00:00 [queued]>
+[2026-02-09T12:58:03.556+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-09T10:57:59.081077+00:00 [queued]>
+[2026-02-09T12:58:03.556+0200] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-02-09T12:58:03.590+0200] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_pipeline> on 2026-02-09 10:57:59.081077+00:00
+[2026-02-09T12:58:03.596+0200] {standard_task_runner.py:60} INFO - Started process 352705 to run task
+[2026-02-09T12:58:03.603+0200] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'flight_price_analysis', 'run_pipeline', 'manual__2026-02-09T10:57:59.081077+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/flight_price_analysis_dag.py', '--cfg-path', '/tmp/tmpqrmvcgm9']
+[2026-02-09T12:58:03.604+0200] {standard_task_runner.py:88} INFO - Job 143: Subtask run_pipeline
+[2026-02-09T12:58:03.679+0200] {task_command.py:423} INFO - Running <TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-09T10:57:59.081077+00:00 [running]> on host Patricks-bot.
+[2026-02-09T12:58:03.756+0200] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='flight_price_analysis' AIRFLOW_CTX_TASK_ID='run_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-02-09T10:57:59.081077+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-09T10:57:59.081077+00:00'
+[2026-02-09T12:58:03.760+0200] {logging_mixin.py:188} INFO - [PIPELINE] Starting ETL...
+[2026-02-09T12:58:03.761+0200] {logging_mixin.py:188} INFO - [EXTRACT] Starting extraction...
+[2026-02-09T12:58:04.013+0200] {logging_mixin.py:188} INFO - [EXTRACT] rows extracted: 57000
+[2026-02-09T12:58:04.013+0200] {logging_mixin.py:188} INFO - [EXTRACT] Data sample BEFORE validation:
+[2026-02-09T12:58:04.033+0200] {logging_mixin.py:188} INFO -               Airline Source                           Source Name Destination  ... Tax & Surcharge (BDT) Total Fare (BDT)      Seasonality  Days Before Departure
+0  Malaysian Airlines    CXB                   Cox's Bazar Airport         CCU  ...           5169.683753     26300.908775          Regular                     10
+1      Cathay Pacific    BZL                       Barisal Airport         CGP  ...            200.000000     11805.395471          Regular                     14
+2     British Airways    ZYL  Osmani International Airport, Sylhet         KUL  ...          11982.374902     51864.874251  Winter Holidays                     83
+3  Singapore Airlines    RJH        Shah Makhdum Airport, Rajshahi         DAC  ...            200.000000      4635.607340          Regular                     56
+4     British Airways    SPD                       Saidpur Airport         YYZ  ...          14886.570922     74130.377068          Regular                     90
+
+[5 rows x 17 columns]
+[2026-02-09T12:58:04.033+0200] {logging_mixin.py:188} INFO - [EXTRACT] rows extracted: 57000
+[2026-02-09T12:58:04.033+0200] {logging_mixin.py:188} INFO - [VALIDATE] Running validation...
+[2026-02-09T12:58:04.078+0200] {logging_mixin.py:188} INFO - [VALIDATE] Rows before validation: 57000
+[2026-02-09T12:58:04.078+0200] {logging_mixin.py:188} INFO - [VALIDATE] Rows after validation: 57000
+[2026-02-09T12:58:04.079+0200] {logging_mixin.py:188} INFO - [VALIDATE] rows after validation: 57000
+[2026-02-09T12:58:04.083+0200] {logging_mixin.py:188} INFO - [TRANSFORM] completed
+[2026-02-09T12:58:15.122+0200] {logging_mixin.py:188} INFO - [LOAD MYSQL] 57000 rows loaded into 'flight_prices_raw'.
+[2026-02-09T12:58:20.459+0200] {logging_mixin.py:188} INFO - [LOAD MYSQL] 57000 rows loaded into 'flight_prices_staging'.
+[2026-02-09T12:58:20.460+0200] {logging_mixin.py:188} INFO - [MYSQL] Load complete
+[2026-02-09T12:58:20.483+0200] {logging_mixin.py:188} INFO - [KPI] Computation complete
+[2026-02-09T12:58:20.670+0200] {logging_mixin.py:188} INFO - [LOAD POSTGRES] KPI tables loaded successfully!
+[2026-02-09T12:58:20.671+0200] {logging_mixin.py:188} INFO - [POSTGRES] Load complete
+[2026-02-09T12:58:20.671+0200] {logging_mixin.py:188} INFO - [PIPELINE] Finished successfully!
+[2026-02-09T12:58:20.672+0200] {python.py:201} INFO - Done. Returned value was: None
+[2026-02-09T12:58:20.675+0200] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=flight_price_analysis, task_id=run_pipeline, execution_date=20260209T105759, start_date=20260209T105803, end_date=20260209T105820
+[2026-02-09T12:58:20.714+0200] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-09T12:58:20.729+0200] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

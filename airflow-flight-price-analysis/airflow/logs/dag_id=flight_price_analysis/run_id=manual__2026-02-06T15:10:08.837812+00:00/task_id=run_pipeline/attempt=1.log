@@ -1,0 +1,29 @@
+[2026-02-06T17:10:11.588+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-06T15:10:08.837812+00:00 [queued]>
+[2026-02-06T17:10:11.596+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-06T15:10:08.837812+00:00 [queued]>
+[2026-02-06T17:10:11.596+0200] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-02-06T17:10:11.614+0200] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_pipeline> on 2026-02-06 15:10:08.837812+00:00
+[2026-02-06T17:10:11.617+0200] {standard_task_runner.py:60} INFO - Started process 88201 to run task
+[2026-02-06T17:10:11.622+0200] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'flight_price_analysis', 'run_pipeline', 'manual__2026-02-06T15:10:08.837812+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/flight_price_analysis_dag.py', '--cfg-path', '/tmp/tmpx0_z4ia0']
+[2026-02-06T17:10:11.623+0200] {standard_task_runner.py:88} INFO - Job 79: Subtask run_pipeline
+[2026-02-06T17:10:11.664+0200] {task_command.py:423} INFO - Running <TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-06T15:10:08.837812+00:00 [running]> on host Patricks-bot.
+[2026-02-06T17:10:11.715+0200] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='flight_price_analysis' AIRFLOW_CTX_TASK_ID='run_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-02-06T15:10:08.837812+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-06T15:10:08.837812+00:00'
+[2026-02-06T17:10:12.487+0200] {logging_mixin.py:188} INFO - [EXTRACT] rows extracted: 57000
+[2026-02-06T17:10:12.487+0200] {logging_mixin.py:188} INFO - [PIPELINE] Running validation...
+[2026-02-06T17:10:12.488+0200] {logging_mixin.py:188} INFO - [VALIDATE] rows before validation: 57000
+[2026-02-06T17:10:12.488+0200] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/airflow/dags/flight_price_analysis_dag.py", line 21, in run_pipeline
+    df = validate_data(df)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/src/validate.py", line 25, in validate_data
+    raise ValueError(f"[VALIDATE] Missing required columns: {missing_cols}")
+ValueError: [VALIDATE] Missing required columns: ['Airline', 'Source', 'Destination', 'Departure Date & Time', 'Arrival Date & Time', 'Base Fare (BDT)', 'Total Fare (BDT)', 'Seasonality', 'Days Before Departure']
+[2026-02-06T17:10:12.492+0200] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=flight_price_analysis, task_id=run_pipeline, execution_date=20260206T151008, start_date=20260206T151011, end_date=20260206T151012
+[2026-02-06T17:10:12.505+0200] {standard_task_runner.py:107} ERROR - Failed to execute job 79 for task run_pipeline ([VALIDATE] Missing required columns: ['Airline', 'Source', 'Destination', 'Departure Date & Time', 'Arrival Date & Time', 'Base Fare (BDT)', 'Total Fare (BDT)', 'Seasonality', 'Days Before Departure']; 88201)
+[2026-02-06T17:10:12.516+0200] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-02-06T17:10:12.525+0200] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,68 @@
+[2026-02-08T12:23:59.180+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-08T10:23:54.983742+00:00 [queued]>
+[2026-02-08T12:23:59.191+0200] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-08T10:23:54.983742+00:00 [queued]>
+[2026-02-08T12:23:59.192+0200] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-02-08T12:23:59.216+0200] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_pipeline> on 2026-02-08 10:23:54.983742+00:00
+[2026-02-08T12:23:59.219+0200] {standard_task_runner.py:60} INFO - Started process 205150 to run task
+[2026-02-08T12:23:59.228+0200] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'flight_price_analysis', 'run_pipeline', 'manual__2026-02-08T10:23:54.983742+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/flight_price_analysis_dag.py', '--cfg-path', '/tmp/tmpcmy3rqvw']
+[2026-02-08T12:23:59.229+0200] {standard_task_runner.py:88} INFO - Job 111: Subtask run_pipeline
+[2026-02-08T12:23:59.298+0200] {task_command.py:423} INFO - Running <TaskInstance: flight_price_analysis.run_pipeline manual__2026-02-08T10:23:54.983742+00:00 [running]> on host Patricks-bot.
+[2026-02-08T12:23:59.372+0200] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='flight_price_analysis' AIRFLOW_CTX_TASK_ID='run_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2026-02-08T10:23:54.983742+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-08T10:23:54.983742+00:00'
+[2026-02-08T12:23:59.374+0200] {logging_mixin.py:188} INFO - [EXTRACT] Starting extraction...
+[2026-02-08T12:23:59.629+0200] {logging_mixin.py:188} INFO - [EXTRACT] rows extracted: 57000
+[2026-02-08T12:23:59.629+0200] {logging_mixin.py:188} INFO - [EXTRACT] Data sample BEFORE validation:
+[2026-02-08T12:23:59.664+0200] {logging_mixin.py:188} INFO -               Airline Source  ...      Seasonality Days Before Departure
+0  Malaysian Airlines    CXB  ...          Regular                    10
+1      Cathay Pacific    BZL  ...          Regular                    14
+2     British Airways    ZYL  ...  Winter Holidays                    83
+3  Singapore Airlines    RJH  ...          Regular                    56
+4     British Airways    SPD  ...          Regular                    90
+
+[5 rows x 17 columns]
+[2026-02-08T12:23:59.665+0200] {logging_mixin.py:188} INFO - [EXTRACT] rows extracted: 57000
+[2026-02-08T12:23:59.677+0200] {logging_mixin.py:188} INFO - [EXTRACT] Data sample BEFORE validation:
+              Airline Source  ...      Seasonality Days Before Departure
+0  Malaysian Airlines    CXB  ...          Regular                    10
+1      Cathay Pacific    BZL  ...          Regular                    14
+2     British Airways    ZYL  ...  Winter Holidays                    83
+3  Singapore Airlines    RJH  ...          Regular                    56
+4     British Airways    SPD  ...          Regular                    90
+
+[5 rows x 17 columns]
+[2026-02-08T12:23:59.677+0200] {logging_mixin.py:188} INFO - [VALIDATE] Running validation...
+[2026-02-08T12:23:59.752+0200] {logging_mixin.py:188} INFO - [VALIDATE] Rows before validation: 57000
+[2026-02-08T12:23:59.753+0200] {logging_mixin.py:188} INFO - [VALIDATE] Rows after validation: 57000
+[2026-02-08T12:23:59.757+0200] {logging_mixin.py:188} INFO - [VALIDATE] Rows after validation: 57000
+[2026-02-08T12:24:00.041+0200] {logging_mixin.py:188} WARNING - /home/pazzoti/de-upskilling/airflow-flight-price-analysis/src/load_mysql.py:41 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-02-08T12:24:00.049+0200] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/airflow/dags/flight_price_analysis_dag.py", line 33, in run_pipeline
+    load_to_mysql(df, table_name="flight_prices_raw")
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/src/load_mysql.py", line 41, in load_to_mysql
+    df_renamed.to_sql(
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 3109, in to_sql
+    return sql.to_sql(
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 844, in to_sql
+    return pandas_sql.to_sql(
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2840, in to_sql
+    table.create()
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 986, in create
+    if self.exists():
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 972, in exists
+    return self.pd_sql.has_table(self.name, self.schema)
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2855, in has_table
+    return len(self.execute(query, [name]).fetchall()) > 0
+  File "/home/pazzoti/de-upskilling/airflow-flight-price-analysis/venv/lib/python3.10/site-packages/pandas/io/sql.py", line 2662, in execute
+    cur = self.con.cursor()
+AttributeError: 'Engine' object has no attribute 'cursor'
+[2026-02-08T12:24:00.057+0200] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=flight_price_analysis, task_id=run_pipeline, execution_date=20260208T102354, start_date=20260208T102359, end_date=20260208T102400
+[2026-02-08T12:24:00.071+0200] {standard_task_runner.py:107} ERROR - Failed to execute job 111 for task run_pipeline ('Engine' object has no attribute 'cursor'; 205150)
+[2026-02-08T12:24:00.082+0200] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-02-08T12:24:00.095+0200] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
