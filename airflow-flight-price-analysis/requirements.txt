@@ -1,0 +1,5 @@
+apache-airflow==2.8.1
+pandas
+mysql-connector-python
+psycopg2-binary
+python-dotenv
