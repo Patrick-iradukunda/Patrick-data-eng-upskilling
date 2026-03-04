@@ -1,0 +1,86 @@
+Learner_ID,Name,Email,Track,Cohort,Enrollment_Date,Weeks_Completed,Program_Status,Graduation_Status,Certification_Status,Certification_Type,Attendance_Rate,Attendance_Rate_Pct,Average_Assessment_Score,Is_Graduated,Is_Certified,Is_Dropped_Out,Is_Completed
+AWS_C1_001,Dorothy Choi,dorothy.choi73@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,1.0,100.0,85.77,True,True,False,True
+AWS_C1_002,Emily Nguyen,emily.nguyen73@email.com,AWS Cloud,Cohort 1,2025-10-13,5,Completed,Dropped Out,Not Certified,,0.38,38.0,44.79,False,False,True,True
+AWS_C1_003,Charles Liu,charles.liu94@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.6,60.0,44.76,True,False,False,True
+AWS_C1_004,Elizabeth Wang,elizabeth.wang88@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.96,96.0,80.57,True,True,False,True
+AWS_C1_005,Ming Martinez,ming.martinez11@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.98,98.0,94.48,True,True,False,True
+AWS_C1_006,Nadia Ahmed,nadia.ahmed98@email.com,AWS Cloud,Cohort 1,2025-10-13,5,Completed,Dropped Out,Not Certified,,0.34,34.0,61.99,False,False,True,True
+AWS_C1_007,Sofia Morris,sofia.morris28@email.com,AWS Cloud,Cohort 1,2025-10-13,5,Completed,Dropped Out,Not Certified,,0.34,34.0,53.15,False,False,True,True
+AWS_C1_008,Zainab Liu,zainab.liu36@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.68,68.0,76.01,True,False,False,True
+AWS_C1_009,Babatunde Chen,babatunde.chen31@email.com,AWS Cloud,Cohort 1,2025-10-13,6,Completed,Dropped Out,Not Certified,,0.52,52.0,47.55,False,False,True,True
+AWS_C1_010,Kwame Verma,kwame.verma14@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.76,76.0,68.89,True,False,False,True
+AWS_C1_011,Nadia Park,nadia.park15@email.com,AWS Cloud,Cohort 1,2025-10-13,2,Completed,Dropped Out,Not Certified,,0.22,22.0,48.48,False,False,True,True
+AWS_C1_012,Ronald Gonzalez,ronald.gonzalez45@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.64,64.0,71.43,True,False,False,True
+AWS_C1_013,Amy Johnson,amy.johnson94@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.84,84.0,92.98,True,True,False,True
+AWS_C1_014,Jennifer King,jennifer.king44@email.com,AWS Cloud,Cohort 1,2025-10-13,3,Completed,Dropped Out,Not Certified,,0.28,28.0,47.7,False,False,True,True
+AWS_C1_015,Elizabeth Miller,elizabeth.miller67@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.66,66.0,65.88,True,False,False,True
+AWS_C1_016,Amy Green,amy.green60@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.88,88.0,93.65,True,True,False,True
+AWS_C1_017,Emily Hall,emily.hall76@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Not Certified,,0.62,62.0,77.93,True,False,False,True
+AWS_C1_018,Kenneth Chen,kenneth.chen35@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.74,74.0,79.05,True,True,False,True
+AWS_C1_019,Timothy Nwosu,timothy.nwosu94@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.78,78.0,70.86,True,True,False,True
+AWS_C1_020,Angela Robinson,angela.robinson64@email.com,AWS Cloud,Cohort 1,2025-10-13,10,Completed,Graduated,Certified,AWS Cloud Practitioner,0.96,96.0,79.86,True,True,False,True
+AWS_C2_001,William Smith,william.smith28@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.8485,84.85,76.12,False,False,False,False
+AWS_C2_002,Carol Kumar,carol.kumar88@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9394,93.94,91.49,False,False,False,False
+AWS_C2_003,Elizabeth White,elizabeth.white43@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.7273,72.73,77.73,False,False,False,False
+AWS_C2_004,Cynthia Nwobi,cynthia.nwobi12@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9091,90.91,77.75,False,False,False,False
+AWS_C2_005,Emeka Clark,emeka.clark74@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.6061,60.61,67.21,False,False,False,False
+AWS_C2_006,Sarah Campbell,sarah.campbell49@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9697,96.97,75.26,False,False,False,False
+AWS_C2_007,Yetunde Smith,yetunde.smith67@email.com,AWS Cloud,Cohort 2,2026-01-12,2,Ongoing,Dropped Out,Not Certified,,0.2424,24.24,45.23,False,False,True,False
+AWS_C2_008,Linda Reed,linda.reed79@email.com,AWS Cloud,Cohort 2,2026-01-12,2,Ongoing,Dropped Out,Not Certified,,0.2121,21.21,75.28,False,False,True,False
+AWS_C2_009,Arjun Adeyemi,arjun.adeyemi95@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9091,90.91,84.88,False,False,False,False
+AWS_C2_010,Lucas Anderson,lucas.anderson24@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.8182,81.82,73.06,False,False,False,False
+AWS_C2_011,Michael Hill,michael.hill60@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.8485,84.85,66.05,False,False,False,False
+AWS_C2_012,Rebecca Collins,rebecca.collins41@email.com,AWS Cloud,Cohort 2,2026-01-12,3,Ongoing,Dropped Out,Not Certified,,0.3333,33.33,42.14,False,False,True,False
+AWS_C2_013,Joshua Reed,joshua.reed81@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9697,96.97,82.14,False,False,False,False
+AWS_C2_014,Christopher Obiora,christopher.obiora42@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.9091,90.91,89.17,False,False,False,False
+AWS_C2_015,Ronald Balogun,ronald.balogun79@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,1.0,100.0,94.38,False,False,False,False
+AWS_C2_016,Arjun Turner,arjun.turner24@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.7273,72.73,76.25,False,False,False,False
+AWS_C2_017,Gary Taylor,gary.taylor76@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.8788,87.88,88.29,False,False,False,False
+AWS_C2_018,Patricia Wang,patricia.wang76@email.com,AWS Cloud,Cohort 2,2026-01-12,6,Ongoing,In Progress,Pending,,0.4848,48.48,53.45,False,False,False,False
+PB_C1_001,Kwame Okeke,kwame.okeke54@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.48,48.0,52.89,True,False,False,True
+PB_C1_002,Ananya Verma,ananya.verma96@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.52,52.0,61.42,True,False,False,True
+PB_C1_003,Raj Brown,raj.brown32@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.46,46.0,51.11,True,False,False,True
+PB_C1_004,Nancy Flores,nancy.flores89@email.com,Power BI,Cohort 1,2025-10-06,6,Completed,Dropped Out,Not Certified,,0.4,40.0,63.22,False,False,True,True
+PB_C1_005,Stephanie Davis,stephanie.davis69@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.78,78.0,68.49,True,False,False,True
+PB_C1_006,Susan Nelson,susan.nelson43@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.54,54.0,77.82,True,False,False,True
+PB_C1_007,Jonathan Flores,jonathan.flores93@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.9,90.0,89.76,True,True,False,True
+PB_C1_008,Anthony Hill,anthony.hill26@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,1.0,100.0,87.11,True,True,False,True
+PB_C1_009,Robert Stewart,robert.stewart34@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.98,98.0,85.71,True,True,False,True
+PB_C1_010,Diego Liu,diego.liu48@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.9,90.0,83.22,True,True,False,True
+PB_C1_011,Ivan King,ivan.king35@email.com,Power BI,Cohort 1,2025-10-06,6,Completed,Dropped Out,Not Certified,,0.48,48.0,63.9,False,False,True,True
+PB_C1_012,Karen Campbell,karen.campbell12@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.8,80.0,64.24,True,False,False,True
+PB_C1_013,Dorothy Green,dorothy.green67@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.56,56.0,65.66,True,False,False,True
+PB_C1_014,Robert Young,robert.young91@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.94,94.0,91.55,True,True,False,True
+PB_C1_015,Jonathan Adeyemi,jonathan.adeyemi76@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.78,78.0,79.39,True,True,False,True
+PB_C1_016,Barbara Ahmed,barbara.ahmed36@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.86,86.0,80.02,True,True,False,True
+PB_C1_017,Jacob Carter,jacob.carter94@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.48,48.0,52.41,True,False,False,True
+PB_C1_018,Jonathan Williams,jonathan.williams58@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.48,48.0,59.74,True,False,False,True
+PB_C1_019,Cynthia Yoon,cynthia.yoon97@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.78,78.0,73.66,True,True,False,True
+PB_C1_020,Emily Baker,emily.baker26@email.com,Power BI,Cohort 1,2025-10-06,2,Completed,Dropped Out,Not Certified,,0.18,18.0,61.58,False,False,True,True
+PB_C1_021,Yuki Rao,yuki.rao76@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.56,56.0,58.21,True,False,False,True
+PB_C1_022,Kwame Phillips,kwame.phillips25@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.9,90.0,91.01,True,True,False,True
+PB_C1_023,Priya Carter,priya.carter66@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Not Certified,,0.58,58.0,61.92,True,False,False,True
+PB_C1_024,Dorothy Brown,dorothy.brown80@email.com,Power BI,Cohort 1,2025-10-06,10,Completed,Graduated,Certified,Power BI Data Analyst Associate,0.88,88.0,89.69,True,True,False,True
+PB_C1_025,Chidi Martin,chidi.martin96@email.com,Power BI,Cohort 1,2025-10-06,5,Completed,Dropped Out,Not Certified,,0.36,36.0,52.37,False,False,True,True
+PB_C2_001,Barbara Martinez,barbara.martinez95@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.9474,94.74,92.28,False,False,False,False
+PB_C2_002,Jonathan Edwards,jonathan.edwards13@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.8158,81.58,70.38,False,False,False,False
+PB_C2_003,Lisa Nguyen,lisa.nguyen81@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.9474,94.74,87.51,False,False,False,False
+PB_C2_004,Daniel Mitchell,daniel.mitchell74@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.9737,97.37,92.24,False,False,False,False
+PB_C2_005,Steven Jones,steven.jones34@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,1.0,100.0,84.62,False,False,False,False
+PB_C2_006,Edward Choi,edward.choi94@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.6053,60.53,75.0,False,False,False,False
+PB_C2_007,Donald Wilson,donald.wilson98@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.7632,76.32,77.63,False,False,False,False
+PB_C2_008,Lucas Scott,lucas.scott79@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.8158,81.58,82.04,False,False,False,False
+PB_C2_009,Lucas Flores,lucas.flores20@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.4211,42.11,61.48,False,False,False,False
+PB_C2_010,Emeka Rogers,emeka.rogers20@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.4474,44.74,52.46,False,False,False,False
+PB_C2_011,Yuki Chen,yuki.chen90@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.4737,47.37,70.58,False,False,False,False
+PB_C2_012,Jacob Liu,jacob.liu84@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.9737,97.37,82.64,False,False,False,False
+PB_C2_013,Brian Harris,brian.harris85@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,1.0,100.0,83.42,False,False,False,False
+PB_C2_014,Valentina Young,valentina.young17@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.9474,94.74,91.34,False,False,False,False
+PB_C2_015,Nancy Rivera,nancy.rivera55@email.com,Power BI,Cohort 2,2026-01-05,5,Ongoing,Dropped Out,Not Certified,,0.5,50.0,51.69,False,False,True,False
+PB_C2_016,Diego Smith,diego.smith15@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.8684,86.84,69.82,False,False,False,False
+PB_C2_017,Dorothy Wright,dorothy.wright67@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,1.0,100.0,83.23,False,False,False,False
+PB_C2_018,Lisa Hill,lisa.hill29@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.6842,68.42,84.42,False,False,False,False
+PB_C2_019,Cynthia Wright,cynthia.wright31@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.6316,63.16,57.91,False,False,False,False
+PB_C2_020,Donald Kumar,donald.kumar40@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.6053,60.53,63.5,False,False,False,False
+PB_C2_021,Vijay Clark,vijay.clark88@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.7895,78.95,86.79,False,False,False,False
+PB_C2_022,Carol Mehta,carol.mehta11@email.com,Power BI,Cohort 2,2026-01-05,7,Ongoing,In Progress,Pending,,0.7105,71.05,77.98,False,False,False,False
