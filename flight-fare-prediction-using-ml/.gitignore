@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+saved_models/
+.vscode/
+*.ipynb_checkpoints
+*.joblib
+*.pkl
+dist/
+build/
+*.egg-info/
