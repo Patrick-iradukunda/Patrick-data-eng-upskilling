@@ -1,0 +1,119 @@
+{
+  "title": "Real-Time Heart Beat Monitor",
+  "uid": "heartbeat-monitor",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "5s",
+  "time": { "from": "now-15m", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Heart Rate Over Time (All Customers)",
+      "type": "timeseries",
+      "gridPos": { "h": 9, "w": 24, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT timestamp AS time, heart_rate, customer_id FROM heartbeat_readings WHERE $__timeFilter(timestamp) ORDER BY timestamp",
+          "format": "time_series",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "blue",  "value": null },
+              { "color": "green", "value": 46 },
+              { "color": "orange","value": 130 },
+              { "color": "red",   "value": 160 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Total Readings",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 9 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT COUNT(*) AS total FROM heartbeat_readings WHERE $__timeFilter(timestamp)",
+          "format": "table",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Anomalies (Last 15 min)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 9 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT COUNT(*) AS anomalies FROM heartbeat_readings WHERE $__timeFilter(timestamp) AND status <> 'NORMAL'",
+          "format": "table",
+          "refId": "A"
+        }
+      ],
+      "options": { "colorMode": "background" },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "red",   "value": 1 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Readings by Status",
+      "type": "piechart",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 9 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT status, COUNT(*) AS count FROM heartbeat_readings WHERE $__timeFilter(timestamp) GROUP BY status ORDER BY count DESC",
+          "format": "table",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Per-Customer Stats",
+      "type": "table",
+      "gridPos": { "h": 8, "w": 16, "x": 0, "y": 17 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT customer_id, full_name, age, total_readings, avg_heart_rate, min_heart_rate, max_heart_rate, high_count, low_count, critical_count FROM customer_heartbeat_stats ORDER BY customer_id",
+          "format": "table",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Recent Anomalies",
+      "type": "table",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 25 },
+      "targets": [
+        {
+          "datasource": "PostgreSQL",
+          "rawSql": "SELECT timestamp, customer_id, full_name, age, heart_rate, status FROM anomaly_readings WHERE $__timeFilter(timestamp) LIMIT 50",
+          "format": "table",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}
